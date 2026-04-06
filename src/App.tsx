@@ -4,7 +4,7 @@ import AppRoutes from "./routes/app-routes";
 
 export default function App() {
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="flex flex-col bg-black text-white min-h-screen">
       <Navbar />
       <AppRoutes />
       <Footer />
