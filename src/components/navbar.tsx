@@ -43,7 +43,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src="/public/icon.jpg" className="rounded-sm size-8" />
+          <img src="/icon.jpg" className="rounded-sm size-8" />
           <span
             className="text-lg tracking-tight hidden sm:block"
             style={{

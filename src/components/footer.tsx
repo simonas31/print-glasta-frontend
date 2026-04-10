@@ -56,7 +56,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/public/icon.jpg"
+                src="/icon.jpg"
                 className="rounded-sm size-8"
                 alt="Print Glasta"
               />
