@@ -17,9 +17,9 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
+    { to: "/", label: "Pagrindinis" },
+    { to: "/about", label: "Apie mus" },
+    { to: "/contact", label: "Susisiek" },
   ];
 
   const isDark = theme === "dark";
@@ -43,12 +43,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div
-            className="w-8 h-8 rounded-sm flex items-center justify-center text-white text-xs font-bold"
-            style={{ background: "var(--accent)" }}
-          >
-            PG
-          </div>
+          <img src="/public/icon.jpg" className="rounded-sm size-8" />
           <span
             className="text-lg tracking-tight hidden sm:block"
             style={{

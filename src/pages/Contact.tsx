@@ -1,9 +1,5 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { contactSchema } from "@/schemas/contact.schema";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
@@ -12,33 +8,71 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay },
 });
 
-const contactInfo = [
+const FacebookIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+  </svg>
+);
+
+const contactChannels = [
+  {
+    icon: FacebookIcon,
+    label: "Facebook",
+    value: "Print Glasta",
+    hint: "Rašykite žinutę – atsakome greitai",
+    href: "https://www.facebook.com/profile.php?id=61587590991157",
+  },
+  {
+    icon: InstagramIcon,
+    label: "Instagram",
+    value: "@printglasta",
+    hint: "DM arba komentaras – laukiame",
+    href: "https://www.instagram.com/print_glasta",
+  },
   {
     icon: Mail,
-    label: "Email us",
+    label: "El. paštas",
     value: "hello@printglasta.com",
+    hint: "Atsakome per 1 darbo dieną",
     href: "mailto:hello@printglasta.com",
   },
   {
     icon: Phone,
-    label: "Call us",
+    label: "Telefonas",
     value: "+370 600 00000",
+    hint: "Pirmadieniais–penktadieniais, 9–18 val.",
     href: "tel:+37060000000",
   },
-  { icon: MapPin, label: "Visit us", value: "Vilnius, Lithuania", href: "#" },
+  {
+    icon: MapPin,
+    label: "Miestas",
+    value: "Alytus, Lietuva",
+    hint: "Pristatome visoje Lietuvoje",
+    href: "#",
+  },
 ];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  const form = useForm({ resolver: zodResolver(contactSchema) });
-
-  const onSubmit = () => {
-    setSubmitted(true);
-  };
-
   return (
     <div className="pt-24 pb-24 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         {/* Header */}
         <motion.div {...fadeUp(0)} className="mb-4">
           <div className="divider" />
@@ -46,7 +80,7 @@ export default function Contact() {
             className="text-xs tracking-widest uppercase"
             style={{ color: "var(--accent)" }}
           >
-            Contact
+            Susisiekite
           </p>
         </motion.div>
         <motion.h1
@@ -54,10 +88,10 @@ export default function Contact() {
           className="text-5xl md:text-7xl font-bold leading-none mb-6"
           style={{ color: "var(--text-primary)" }}
         >
-          Let's create
+          Kalbėkimės
           <br />
           <span className="italic" style={{ color: "var(--accent)" }}>
-            something great.
+            apie jūsų idėją.
           </span>
         </motion.h1>
         <motion.p
@@ -65,201 +99,93 @@ export default function Contact() {
           className="text-xl mb-16 max-w-lg"
           style={{ color: "var(--text-secondary)" }}
         >
-          Tell us about your project. We usually respond within one business
-          day.
+          Turite klausimų ar norite užsakyti? Susisiekite patogiu būdu –
+          atsakysime kuo greičiau.
         </motion.p>
 
-        <div className="grid md:grid-cols-5 gap-12">
-          {/* Info column */}
-          <div className="md:col-span-2 flex flex-col gap-8">
-            {contactInfo.map((item, i) => (
-              <motion.a
-                key={i}
-                {...fadeUp(0.1 + i * 0.08)}
-                href={item.href}
-                className="flex items-start gap-4 group"
-              >
-                <div
-                  className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center mt-0.5 transition-colors duration-200"
-                  style={{ background: "var(--accent-subtle)" }}
-                >
-                  <item.icon size={18} style={{ color: "var(--accent)" }} />
-                </div>
-                <div>
-                  <p
-                    className="text-xs tracking-widest uppercase mb-1"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {item.label}
-                  </p>
-                  <p
-                    className="font-medium underline-anim"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    {item.value}
-                  </p>
-                </div>
-              </motion.a>
-            ))}
-
-            <motion.div
-              {...fadeUp(0.4)}
-              className="mt-4 p-6 rounded-2xl"
-              style={{
-                background: "var(--bg-secondary)",
-                border: "1px solid var(--border)",
-              }}
+        {/* Contact channels */}
+        <div className="flex flex-col gap-4">
+          {contactChannels.map((item, i) => (
+            <motion.a
+              key={i}
+              {...fadeUp(0.1 + i * 0.07)}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={
+                item.href.startsWith("http") ? "noopener noreferrer" : undefined
+              }
+              className="flex items-center gap-5 p-6 rounded-2xl glass-card group transition-all duration-200 hover:scale-[1.01]"
             >
-              <p
-                className="text-sm font-medium mb-1"
-                style={{ color: "var(--text-primary)" }}
+              <div
+                className="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center"
+                style={{
+                  background: "var(--accent-subtle)",
+                  color: "var(--accent)",
+                }}
               >
-                Mon – Fri, 9am – 6pm CET
-              </p>
-              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                We'll reply within one business day. For urgent projects, call
-                us directly.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Form */}
-          <motion.div {...fadeUp(0.2)} className="md:col-span-3">
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="h-full flex flex-col items-center justify-center text-center py-20 gap-4"
-              >
-                <CheckCircle size={48} style={{ color: "var(--accent)" }} />
-                <h3
-                  className="text-2xl font-bold"
+                <item.icon />
+              </div>
+              <div className="flex-1">
+                <p
+                  className="text-xs tracking-widest uppercase mb-0.5"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  {item.label}
+                </p>
+                <p
+                  className="font-medium text-lg"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Message sent!
-                </h3>
-                <p style={{ color: "var(--text-secondary)" }}>
-                  We'll be in touch very soon.
+                  {item.value}
                 </p>
-              </motion.div>
-            ) : (
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-5"
-              >
-                {/* Name + Email row */}
-                <div className="grid sm:grid-cols-2 gap-5">
-                  {[
-                    {
-                      name: "name" as const,
-                      placeholder: "Your name",
-                      label: "Name",
-                    },
-                    {
-                      name: "email" as const,
-                      placeholder: "you@example.com",
-                      label: "Email",
-                    },
-                  ].map((field) => (
-                    <div key={field.name}>
-                      <label
-                        className="text-xs tracking-widest uppercase block mb-2"
-                        style={{ color: "var(--text-muted)" }}
-                      >
-                        {field.label}
-                      </label>
-                      <input
-                        placeholder={field.placeholder}
-                        {...form.register(field.name)}
-                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 focus:ring-2"
-                        style={{
-                          background: "var(--bg-secondary)",
-                          border: `1px solid var(--border)`,
-                          color: "var(--text-primary)",
-                          // @ts-ignore
-                          "--tw-ring-color": "var(--accent)",
-                        }}
-                        onFocus={(e) =>
-                          (e.target.style.borderColor = "var(--accent)")
-                        }
-                        onBlur={(e) =>
-                          (e.target.style.borderColor = "var(--border)")
-                        }
-                      />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Subject */}
-                <div>
-                  <label
-                    className="text-xs tracking-widest uppercase block mb-2"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Subject
-                  </label>
-                  <select
-                    className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 appearance-none cursor-pointer"
-                    style={{
-                      background: "var(--bg-secondary)",
-                      border: `1px solid var(--border)`,
-                      color: "var(--text-primary)",
-                    }}
-                    onFocus={(e) =>
-                      (e.target.style.borderColor = "var(--accent)")
-                    }
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = "var(--border)")
-                    }
-                  >
-                    <option>New project inquiry</option>
-                    <option>Request a sample</option>
-                    <option>Technical question</option>
-                    <option>Partnership</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label
-                    className="text-xs tracking-widest uppercase block mb-2"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    placeholder="Describe your project, dimensions, timeline..."
-                    rows={5}
-                    {...form.register("message")}
-                    className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 resize-none"
-                    style={{
-                      background: "var(--bg-secondary)",
-                      border: `1px solid var(--border)`,
-                      color: "var(--text-primary)",
-                    }}
-                    onFocus={(e) =>
-                      (e.target.style.borderColor = "var(--accent)")
-                    }
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = "var(--border)")
-                    }
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="btn-accent w-full flex items-center justify-center gap-2 py-4 rounded-xl font-medium"
+                <p
+                  className="text-sm mt-0.5"
+                  style={{ color: "var(--text-secondary)" }}
                 >
-                  Send message
-                  <Send size={15} />
-                </motion.button>
-              </form>
-            )}
-          </motion.div>
+                  {item.hint}
+                </p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="opacity-30 group-hover:opacity-70 transition-opacity duration-200 shrink-0"
+                style={{ color: "var(--text-primary)" }}
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </motion.a>
+          ))}
         </div>
+
+        {/* Note */}
+        <motion.div
+          {...fadeUp(0.6)}
+          className="mt-10 p-6 rounded-2xl text-center"
+          style={{
+            background: "var(--bg-secondary)",
+            border: "1px solid var(--border)",
+          }}
+        >
+          <MessageCircle
+            size={22}
+            className="mx-auto mb-3"
+            style={{ color: "var(--accent)" }}
+          />
+          <p
+            className="text-sm font-medium mb-1"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Greičiausias būdas – Facebook žinutė
+          </p>
+          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+            Galite iš karto atsiųsti nuotrauką ar dizainą – aptarsime detales ir
+            paruošime pasiūlymą.
+          </p>
+        </motion.div>
       </div>
     </div>
   );

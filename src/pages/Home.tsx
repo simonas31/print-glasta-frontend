@@ -12,61 +12,53 @@ const fadeUp = (delay = 0) => ({
 
 const galleryItems = [
   {
-    title: "Kitchen Splashbacks",
-    category: "Residential",
-    desc: "Heat-resistant printed glass panels that transform everyday kitchens into design statements.",
-    img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80",
+    title: "Adreso lentelės",
+    category: "Namai",
+    desc: "Karščiui atsparūs stiklo spaudiniai, kurie paverčia virtuvę tikru dizaino akcentu.",
+    img: "https://scontent.fvno5-1.fna.fbcdn.net/v/t51.82787-15/649223893_18034748843604384_8221981513958278998_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=cq-ZWEL4LpMQ7kNvwG204ym&_nc_oc=AdozPyFdaiPUVRpoAN5gLLpJbaZYoyODkWciMaPjTiK0y_884L95eIj-LOkpwk-Bgco&_nc_zt=23&se=-1&_nc_ht=scontent.fvno5-1.fna&_nc_gid=NsfraBudMZULDur8Ob0vGQ&_nc_ss=7a3a8&oh=00_Af18pnRWAIRKDHKCk4tHUM9i23oi7O77BbE0E3yjTBvt8g&oe=69DF2877",
     span: "col-span-2",
   },
   {
-    title: "Office Branding",
-    category: "Commercial",
-    desc: "High-definition logo prints on glass partitions and walls.",
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
+    title: "Interjeras",
+    category: "Interjeras",
+    desc: "Logotipai ir firminiai spaudiniai ant stiklo pertvarų ir sienų.",
+    img: "https://scontent.fvno5-1.fna.fbcdn.net/v/t51.82787-15/645799540_18033929060604384_1797444448168171138_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=YLxAa8LRn4cQ7kNvwEACu20&_nc_oc=Adrl-wyfXoiwZzjWenJ6OCU8CorcphATvoD_p_h970pv-Vr9BjNIGBRRKDe4DYYbUBI&_nc_zt=23&_nc_ht=scontent.fvno5-1.fna&_nc_gid=k3rKVd8cVYlo-mfBN5-yZw&_nc_ss=7a3a8&oh=00_Af2-ZdyGHKvDz2pRh3koe9KYrfPl_5ts4eBUGEXPAkM_Ng&oe=69DF0D7B",
     span: "col-span-1",
   },
   {
-    title: "Art Installations",
-    category: "Interior Design",
-    desc: "Custom photographic murals on glass for hospitality spaces.",
-    img: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
+    title: "Meno kūriniai",
+    category: "Interjeras",
+    desc: "Individualūs fotografiniai paveikslai ant stiklo – namams ir viešosioms erdvėms.",
+    img: "https://scontent.fvno5-1.fna.fbcdn.net/v/t51.82787-15/656294665_18038663438604384_5752819497538848979_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=V8wYBAq-7zIQ7kNvwGlk6V8&_nc_oc=Adq6973jnETt05G3VO3tzaM1VfTlL6386DlIEOP4crTP2ghj5cZoYZErPH9U_TCHgrU&_nc_zt=23&_nc_ht=scontent.fvno5-1.fna&_nc_gid=smMEqeSmUHHaguAXhTynfQ&_nc_ss=7a3a8&oh=00_Af2KONpgK7tkzC2aJ3neP_CRpDq2NsYMQnC6LaiXkRdvsw&oe=69DF18E3",
     span: "col-span-1",
   },
   {
-    title: "Architectural Facades",
-    category: "Architecture",
-    desc: "Large-format exterior glass printing for distinctive building identities.",
-    img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80",
+    title: "Meno kūriniai",
+    category: "Interjeras",
+    img: "https://scontent.fvno5-1.fna.fbcdn.net/v/t39.30808-6/627494208_122095937403253033_2050402089643231482_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_ohc=Rim8WbKqWJEQ7kNvwEIIAKG&_nc_oc=AdqM1HnahiG59Un0RSARM3snvwq_GD6afxrdlHN2Ii4uMmnYlvN2LXJNA4WfYdEIJYM&_nc_zt=23&_nc_ht=scontent.fvno5-1.fna&_nc_gid=JxhUyt8ott6Z5gClUBeEfg&_nc_ss=7a3a8&oh=00_Af37DVh47C12aZJHpSUX3KCpaCMghvZ0NK3xd6VySCVHog&oe=69DF14AC",
     span: "col-span-2",
   },
-];
-
-const stats = [
-  { value: "12+", label: "Years in business" },
-  { value: "3,400+", label: "Projects delivered" },
-  { value: "98%", label: "Client satisfaction" },
-  { value: "16", label: "Countries served" },
 ];
 
 const features = [
   {
     icon: Layers,
-    title: "UV-Direct Printing",
-    desc: "Ink fused directly into glass surface. Scratch-resistant, fade-proof, and dishwasher safe.",
+    title: "UV spausdinimas",
+    desc: "Rašalas susiliejamas tiesiai su stiklo paviršiumi. Atsparus įbrėžimams, nebluks ir lengvai valomas.",
   },
   {
     icon: Zap,
-    title: "7-Day Turnaround",
-    desc: "Precision manufacturing without the wait. Express options available for urgent projects.",
+    title: "Greita gamyba",
+    desc: "Užsakymą paruošiame per 3–7 darbo dienas. Skubiems atvejams – susisiekite tiesiogiai.",
   },
   {
     icon: Shield,
-    title: "10-Year Guarantee",
-    desc: "Every print backed by our colour-fidelity and structural integrity guarantee.",
+    title: "Kokybės garantija",
+    desc: "Kiekvienas spaudinys gaminama kruopščiai ir su atida – mums svarbu, kad būtumėte patenkinti.",
   },
 ];
 
-function StatCard({
+function AdvantageCard({
   value,
   label,
   delay,
@@ -135,21 +127,6 @@ export default function Home() {
         />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase mb-8"
-            style={{
-              background: "var(--accent-subtle)",
-              color: "var(--accent)",
-              border: "1px solid var(--glass-border)",
-            }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-            Premium Glass Printing Since 2013
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -157,12 +134,12 @@ export default function Home() {
             className="text-5xl sm:text-6xl md:text-8xl font-bold leading-none mb-6"
             style={{ color: "var(--text-primary)" }}
           >
-            Glass that{" "}
+            Jūsų akimirka –{" "}
             <span className="italic" style={{ color: "var(--accent)" }}>
-              tells
+              amžina
             </span>
             <br />
-            your story
+            ant stiklo
           </motion.h1>
 
           <motion.p
@@ -172,8 +149,8 @@ export default function Home() {
             className="text-lg md:text-xl max-w-xl mx-auto mb-10"
             style={{ color: "var(--text-secondary)" }}
           >
-            Custom-printed glass for architecture, interiors and branding.
-            Precision UV printing on any glass surface, any scale.
+            Spausdiname nuotraukas ir dizainus ant grūdinto stiklo –
+            individualiai, kokybiškai ir su meile kiekvienam užsakymui.
           </motion.p>
 
           <motion.div
@@ -184,9 +161,9 @@ export default function Home() {
           >
             <Link
               to="/contact"
-              className="btn-accent flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-medium"
+              className="btn-accent inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-medium"
             >
-              Start your project
+              Susisiekite su mumis
               <ArrowRight size={16} />
             </Link>
             <Link
@@ -198,7 +175,7 @@ export default function Home() {
                 border: "1px solid var(--border)",
               }}
             >
-              Our story
+              Apie mus
             </Link>
           </motion.div>
         </div>
@@ -211,7 +188,7 @@ export default function Home() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
           style={{ color: "var(--text-muted)" }}
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">Žemyn</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
@@ -221,15 +198,16 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── STATS ──────────────────────────────────────────────── */}
+      {/* ── ADVANTAGE CARDS ────────────────────────────────────── */}
       <section
         className="py-20 px-6"
         style={{ background: "var(--bg-secondary)" }}
       >
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s, i) => (
-            <StatCard key={i} {...s} delay={i * 0.1} />
-          ))}
+          <AdvantageCard value="100%" label="Grūdintas stiklas" delay={0.1} />
+          <AdvantageCard value="HD" label="Aukšta raiška" delay={0.2} />
+          <AdvantageCard value="∞" label="Ilgaamžis" delay={0.3} />
+          <AdvantageCard value="H₂O" label="Atsparus drėgmei" delay={0.4} />
         </div>
       </section>
 
@@ -242,7 +220,7 @@ export default function Home() {
               className="text-xs tracking-widest uppercase mb-3"
               style={{ color: "var(--accent)" }}
             >
-              Portfolio
+              Portfelis
             </p>
           </motion.div>
           <motion.h2
@@ -250,15 +228,15 @@ export default function Home() {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "var(--text-primary)" }}
           >
-            Work we're proud of
+            Darbai, kuriais didžiuojamės
           </motion.h2>
           <motion.p
             {...fadeUp(0.2)}
             className="text-lg mb-14 max-w-lg"
             style={{ color: "var(--text-secondary)" }}
           >
-            From intimate residential spaces to landmark commercial
-            installations.
+            Nuo jaukių namų interjerų iki komercinių erdvių – kiekvienas darbas
+            unikalus.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -275,9 +253,8 @@ export default function Home() {
                   src={item.img}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ minHeight: 280 }}
+                  style={{ minHeight: 280, maxHeight: 400 }}
                 />
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
                   <span
@@ -289,7 +266,6 @@ export default function Home() {
                   <h3 className="text-xl font-bold text-white">{item.title}</h3>
                   <p className="text-sm text-white/70 mt-1">{item.desc}</p>
                 </div>
-                {/* Always visible label */}
                 <div className="absolute top-4 left-4 group-hover:opacity-0 transition-opacity duration-300">
                   <span
                     className="text-xs px-3 py-1 rounded-full font-medium backdrop-blur-md"
@@ -320,7 +296,7 @@ export default function Home() {
               className="text-xs tracking-widest uppercase mb-3"
               style={{ color: "var(--accent)" }}
             >
-              Why Print Glasta
+              Kodėl mes
             </p>
           </motion.div>
           <motion.h2
@@ -328,10 +304,10 @@ export default function Home() {
             className="text-4xl md:text-5xl font-bold mb-16"
             style={{ color: "var(--text-primary)" }}
           >
-            Built different.
+            Dirbame su meile.
             <br />
             <span className="italic" style={{ color: "var(--accent)" }}>
-              Made to last.
+              Rezultatas matomas.
             </span>
           </motion.h2>
 
@@ -372,7 +348,6 @@ export default function Home() {
               border: "1px solid var(--border)",
             }}
           >
-            {/* background glow */}
             <div
               className="absolute inset-0 opacity-30"
               style={{
@@ -386,29 +361,29 @@ export default function Home() {
                 className="text-xs tracking-widest uppercase mb-4"
                 style={{ color: "var(--accent)" }}
               >
-                Let's work together
+                Pradėkime
               </motion.p>
               <motion.h2
                 {...fadeUp(0.2)}
                 className="text-4xl md:text-6xl font-bold mb-6"
                 style={{ color: "var(--text-primary)" }}
               >
-                Have a project in mind?
+                Turite idėją?
               </motion.h2>
               <motion.p
                 {...fadeUp(0.3)}
                 className="text-lg mb-10 max-w-md mx-auto"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Tell us about your space, your vision, and your timeline. We'll
-                make it happen.
+                Papasakokite apie savo nuotrauką ar viziją – aptarsime detales
+                ir paruošime jūsų unikalų stiklo spaudinį.
               </motion.p>
               <motion.div {...fadeUp(0.4)}>
                 <Link
                   to="/contact"
                   className="btn-accent inline-flex items-center gap-2 px-10 py-4 rounded-full text-base font-medium"
                 >
-                  Start the conversation
+                  Susisiekite
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>
